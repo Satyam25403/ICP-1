@@ -15,3 +15,21 @@ def find_deck_arrangement(N):
 
 
 print(find_deck_arrangement(4))  # Output should be [1, 3, 2, 4]
+
+
+#queue using stacks
+n = int(input())
+l = list(map(int, input().split()))
+queue = []
+k = 0
+for i in range(n):
+  if l[k] == 1:
+    queue.append(l[k+1])
+    k += 2
+  elif l[k] == 2:
+    if queue:
+      print(queue.pop(0),end = " ")
+    else:
+      print(-1, end = " ")
+    k += 1
+print()
