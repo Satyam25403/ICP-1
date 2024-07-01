@@ -33,7 +33,7 @@ def val(matrix,n):
             if(j==n-i-1):
                 d2+=matrix[i][j]
         c_sum.append(c)
-        r_sum.append(c)
+        r_sum.append(r)
     
     res=c_sum+r_sum
     res.append(d1)
