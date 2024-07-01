@@ -21,7 +21,6 @@ def match_nuts(nuts,bolts):
     for i in order:
         if i in bolts:
             b.append(i)
-    for i in order:
         if i in nuts:
             n.append(i)
             

@@ -40,7 +40,7 @@ def findLargestMinDistance(boards, k):
             return time
     return low
 
-ans=[]
+
 k,n=map(int,input().split(" "))
 l=list(map(int,input().split(" ")))
 print(findLargestMinDistance(l,k))
