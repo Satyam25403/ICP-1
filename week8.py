@@ -1,39 +1,20 @@
 #find the string in grid
-def find(grid, word):
-    rows = len(grid)
-    cols = len(grid[0])
+m = int(input())
+g = [list(input()) for _ in range(m)]
+x = input()
+y = 'a' * len(x)
+for i in range(len(g)):
+    row_string = ''.join(g[i])
+    start = 0
+    while start < len(row_string):
+        d = row_string.find(x, start)
+        if d == -1:
+            break
+        print(i, d)
+        for j in range(len(x)):
+            g[i][d + j] = y[j]
+        start = d + len(x)
 
-    def is_valid(r, c):
-        return 0 <= r < rows and 0 <= c < cols
-
-    def search(r, c, dr, dc):
-        for char in word:
-            #if not valid cell or not matching character
-            if not is_valid(r, c) or grid[r][c] != char:
-                return False
-            r += dr
-            c += dc
-        return True
-
-    directions = [(0, 1), (1, 0), (1, 1), (-1, 1), (0, -1), (-1, 0), (-1, -1), (1, -1)]
-    ans = []
-    for r in range(rows):
-        for c in range(cols):
-            for dr, dc in directions:
-                if search(r, c, dr, dc):
-                    ans.append((r, c))
-    return ans
-
-ans = []
-r,c = map(int,input().split())
-l = []
-for _ in range(r):
-  row = input().strip().split()
-  l.append(row)
-res=find(l,input())
-for j in res:
-    print(j, end = " ")
-print(end = ',\n')
 
 
 #missing number in matrix
